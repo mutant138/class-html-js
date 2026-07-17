@@ -50,3 +50,20 @@
    background-color: blue;
    width: 100px;
 }
+
+#helo{
+    margin: 10px;
+    /* display: inline-block; */
+   /* margin: 30px 20px 15px 10px; */
+   /* margin-top: 30px ;
+   margin-bottom: 30px; */
+    border: 2px solid rgb(0, 0, 0);
+ /* border-style: ;
+ border-color: ;
+ border-width: ; */
+  padding: 20px;  /* same as margin */
+}
+
+/* #hola{
+   margin: 30px;
+} */
