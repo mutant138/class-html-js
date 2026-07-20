@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omega</title>
     <link rel="stylesheet" href="./style.css" >
-    
 </head>
 <body>
     <!-- <div class="container">
@@ -19,10 +18,10 @@
          3
         </div>
     </div> -->
-    <div style="background-color: blueviolet;">
+    <!-- <div style="background-color: blueviolet;"> -->
 
   
-    <form>
+    <!-- <form>
         <label for="username">User Name :</label>
         <input type="text" id="username" name="username" placeholder="Enter you user name" required"><br><br>
         <input type="email" name="" id="">
@@ -34,9 +33,34 @@
         <input type="submit" value="Submit">
         <button type="submit">Submit Button</button>
     </form>
-      </div>
+      </div> -->
         <!-- <h1 id="helo">Hello world</h1>
      <h1 id="hola">Hi Program</h1> -->
+
+
+    <header id="main-header" class="bg-success">
+    <div class="container">
+      <h1 id="header-title">Item Lister</h1>
+    </div> <!-- container-->
+  </header>
+
+  <div class="container">
+    <div id="main" class="card card-body">
+      <h2 class="title">Add Items</h2>
+      <form>
+        <input type="text">
+        <input type="submit" class="btn" value="Submit">
+      </form>
+      <h2 class="title">Items</h2>
+      <ul id="items" class="list-group">
+        <li class="list-group-item">item 1</li>
+        <li class="list-group-item">item 2</li>
+        <li class="list-group-item">item 3</li>
+        <li class="list-group-item">item 4</li>
+      </ul>
+    </div> 
+  </div> 
+  <script src="dom.js"></script>
 </body>
 </html>
 
