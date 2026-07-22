@@ -14,7 +14,7 @@
 
 // header.textContent = "Nazith"
 
-var listItems = document.getElementById("items")
+// var listItems = document.getElementById("items")
 
 // console.log(listItems.parentElement.parentElement)
 
@@ -33,18 +33,45 @@ var listItems = document.getElementById("items")
 // listItems.lastElementChild.textContent = "Partha"
 // listItems.firstElementChild.textContent = "Nazith"
 
-var newDiv = document.createElement("div")
+// var newDiv = document.createElement("div")
 
-newDiv.textContent = "Sanjith"
+// newDiv.textContent = "Sanjith"
 
 // newDiv.setAttribute("id", "sabari")
 
-newDiv.id = "sabari"
+// newDiv.id = "sabari"
 
-newDiv.className = "Ganesh"
+// newDiv.className = "Ganesh"
 
-var container = document.querySelector(".container")
+// var container = document.querySelector(".container")
+// container.insertBefore(newDiv, header )
+
+// console.log(newDiv)
+
+// EVENT
+
+var clickBtn = document.getElementById("btn")
 var header = document.querySelector("#header-title")
-container.insertBefore(newDiv, header )
 
-console.log(newDiv)
+
+clickBtn.addEventListener("click", clickMe)
+// clickBtn.addEventListener("dblclick", test)
+
+count = 0
+function clickMe(event){
+    // console.log("Partha topper")
+    if(count == 10){
+     alert("Podhum")
+     count = 0
+     return
+    }
+    console.log(event.type)
+    header.textContent = "Partha topper"
+    header.style.color = "red"
+    count++
+}
+
+// function test(){
+//     console.log("Sabari is topper")
+// }
+// console.log(clickBtn)
