@@ -1,72 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omega</title>
-    <link rel="stylesheet" href="./style.css" >
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
-
+    <title>Complete Form Class</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- <div class="container">
-        <div class="item">
-        1
-        </div>
-        <div class="item">
-        2
-        </div>
-        <div class="item">
-         3
-        </div>
-    </div> -->
-    <!-- <div style="background-color: blueviolet;"> -->
 
-  
-    <!-- <form>
-        <label for="username">User Name :</label>
-        <input type="text" id="username" name="username" placeholder="Enter you user name" required"><br><br>
-        <input type="email" name="" id="">
-        <label for="fruits">Apple</label>
-        <input type="checkbox" name="" id="fruits">
-        <input type="file" name="" id="">
-        <input type="datetime-local" name="" id="">
-        <input type="reset" value="Reset">
-        <input type="submit" value="Submit">
-        <button type="submit">Submit Button</button>
-    </form>
-      </div> -->
-        <!-- <h1 id="helo">Hello world</h1>
-     <h1 id="hola">Hi Program</h1> -->
+<!-- <h1>Complete HTML Form Example</h1>
 
+<form id="studentForm">
+    <label>Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter Name" required>
+    <label>Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter Email">
+    <label>Password</label>
+    <input type="password" id="password" name="password">
+    <label>Age</label>
+    <input type="number" id="age" name="age">
+    <label>Birthday</label>
+    <input type="date" name="birthday">
+    <label>Meeting Time</label>
+    <input type="time" name="meetingTime">
+    <label>Favorite Color</label>
+    <input type="color" name="color">
+    <label>Experience</label>
+    <input type="range" min="0" max="10" name="experience">
+    <label>Website</label>
+    <input type="url" name="website">
+    <label>Phone</label>
+    <input type="tel" name="phone">
+    <label>Search</label>
+    <input type="search" name="search">
+    <label>Upload Resume</label>
+    <input type="file" id="resume" name="resume">
+    <hr>
+    <h3>Gender (Radio)</h3>
+    <label>
+        <input type="radio" name="gender" value="Male">
+        Male
+    </label>
+    <label>
+        <input type="radio" name="gender" value="Female">
+        Female
+    </label>
+    <hr>
+    <h3>Skills (Checkbox)</h3>
+    <label>
+        <input type="checkbox" name="skills" value="HTML">
+        HTML
+    </label>
+    <label>
+        <input type="checkbox" name="skills" value="CSS">
+        CSS
+    </label>
+    <label>
+        <input type="checkbox" name="skills" value="JavaScript">
+        JavaScript
+    </label>
+    <label>
+        <input type="checkbox" name="skills" value="React">
+        React
+    </label>
+    <hr>
+    <label>Country</label>
+    <select id="country" name="country">
+        <option value="">Select Country</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>Japan</option>
+        <option>Canada</option>
+    </select>
+    <label>About Yourself</label>
+    <textarea
+        id="about"
+        name="about"
+        rows="5"
+        placeholder="Write something..."
+    ></textarea>
+    <br><br>
+    <button type="submit">Submit Form</button>
+    <button type="reset">Reset</button>
+    <button type="button" id="helloBtn">
+        Click Me
+    </button> 
+</form> -->
 
-    <header id="main-header" class="bg-success">
-    <div class="container">
-      <h1 id="header-title">Item Lister</h1>
-    </div> <!-- container-->
-  </header>
+<!-- <div class="container">
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+  <div class="item item-1">Item 1</div>
+  <div class="item item-2">Item 2</div>
+  <div class="item item-3">Item 3</div>
+</div> -->
 
-  <div class="container">
-    <div id="main" class="card card-body">
-      <h2 class="title">Add Items</h2>
-      <form>
-        <input type="text">
-        <input type="submit" class="btn" value="Submit">
-      </form>
-      <h2 class="title">Items</h2>
-      <ul id="items" class="list-group"><li class="list-group-item">item 1</li>
-        <li class="list-group-item">item 2</li>
-        <li class="list-group-item">item 3</li>
-        <li class="list-group-item">item 4</li>
-      </ul>
-      <button id="btn">Click Me</button>
-    </div> 
-  </div> 
+<!-- <a href="https://www.google.com">Google</a>
 
-  <script src="dom.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<button>Click Me</button> -->
+
+<div id="box">
+    Hi
+</div>
+<script src="dom.js"></script>
 
 </body>
 </html>
-
-

@@ -1,145 +1,125 @@
-/* *{
-    background-color: rgb(0, 0, 0);
+/* BASE STYLES */
+/* :root {
+  --clr-dark: #000000;
+  --clr-light: #f1f5f9;
+  --clr-accent: #e11d48;
 } */
 
-
-/* DRY - Do not repeat yourself */
-
-/* #partha{
-  color: rgb(17, 121, 121);
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
 } */
 
-/* #head1{
-    color: rgb(193, 111, 12);
-}
-
-#head4{
-     color: rgb(193, 111, 12);
+/* body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  word-spacing: 1.4px;
+  font-family: "Roboto", sans-serif;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 } */
 
-/* h1{
-    color: black;
-} */
-/* 
-#head1{
-    color: blueviolet;
-}
-
-.cse3rd{
-    color: rgb(193, 111, 12);
+/* .container {
+  width: 80%;
+  height: 700px;
+  margin: 0 auto;
+  border: 10px solid var(--clr-dark);
 } */
 
-
-/* .container{
- display: flex;
- flex-direction: row;
- justify-content: center;
- background-color: red;
- height: 300px;
- gap: 10px;
- align-items: center;
- border: 7px solid rgb(0, 0, 0);
- border-style: ;
- border-color: ;
- border-width: ;
- border-radius: 10px;
+/* .item {
+  width: 150px;
+  height: 150px;
+  background-color: #fb7185;
+  padding: 1em;
+  font-weight: 700;
+  color: var(--clr-light);
+  text-align: center;
+  border: 10px solid var(--clr-accent);
+  border-radius: 10px;
 } */
 
-/* .item{
-   height: 100px;
-   background-color: blue;
-   width: 100px;
-} */
+/* END OF BASE STYLES */
 
-/* #helo{ */
-    /* margin: 10px; */
-    /* display: inline-block; */
-   /* margin: 30px 20px 15px 10px; */
-   /* margin-top: 30px ;
-   margin-bottom: 30px; */
-    /* border: 2px solid rgb(0, 0, 0); */
- /* border-style: ;
- border-color: ;
- border-width: ; */
-  /* padding: 20px;   */
-/* } */
 
-/* #hola{
-   margin: 30px;
+/* .item-1{
+    flex-shrink: 2;
 } */
 
 
 
+/* ::placeholder{
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+} */
+
+/* a:link{
+  background-color: brown;
 }
 
-body {
-    font-family: sans-serif;
+a:hover{
+  background-color: wheat;
 }
 
-.container {
-    padding: 0px 25px;
+a:active{
+  background-color: aqua;
 }
 
-/*-------- HEADER --------*/
-#main-header {
-    background-color: rgb(0, 126, 0);
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+a:visited{
+  background-color: rgb(19, 19, 87);
+} */
+
+
+/* button:hover{
+  background-color: blue;
+} */
+
+
+#box{
+   border: 3px solid red;
+   width: 250px;
+   height: 250px;
+   font-size: 200px;
+   text-align: center;
+   background-color: blueviolet;
+
+
+   /* transform:  translateX(-150px);
+   transform: translateY(-150px); */
+   /* transform: translate(-150px, -150px); */
+   /* transform: rotateX(100deg); */
+   /* transform: rotateY(120deg); */
+   /* transform: rotateZ(120deg); */
+   /* transform: rotate(90deg, 180deg, 90deg); */
+   /* transform: scaleX(3); */
+   /* transform: scaleY(2); */
+   /* transform: scaleZ(); */
+   /* transform: scale(1,1); */
+   /* transform: skew() */
+
+   /* transform: matrix(scaleX, skewX, skewY, scaleY, translateX, translateY); */
+
+   /* animation: myAni;
+   animation-duration: 5s;
+   animation-iteration-count: infinite;
+   animation-play-state: running;
+   animation-timing-function: ease; */
+  animation: myAni 5s  delay infinite;
 }
 
-#header-title {
-    color: white;
-    font-size: 40px;
+#box:hover {
+  animation-play-state: paused;
 }
 
-/*-------- MAIN CONTENT --------*/
-#main {
-    border: 1px solid rgb(180, 180, 180);
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.title {
-    margin: 20px 0px;
-    font-size: 30px;
-}
-
-.title:first-child {
-    margin-top: 0px;
-}
-
-input {
-    height: 30px;
-    border: 1px solid rgb(180, 180, 180);
-}
-
-.btn {
-    background-color: rgb(39, 39, 39);
-    color: white;
-    width: 100px;
-    border: 0px;
-    cursor: pointer;
-}
-
-.list-group-item {
-    border-bottom: 1px solid rgb(180, 180, 180);
-    list-style-type: none;
-    margin-bottom: 20px;
-}
-
-.list-group-item:last-child {
-    margin-bottom: 10px;
-}
-
-#btn{
-    background-color: black;
-    width: 60px;
-    color: white;
+@keyframes myAni{
+  from{
+    margin-left: 100%;
+  }
+  to{
+    margin-left: 0%;
+  }
 }
