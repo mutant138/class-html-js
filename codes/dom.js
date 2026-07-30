@@ -13,36 +13,35 @@
 
 "userpass is not defined ---> not exist"
 
-
 // Variable decalaration
 
 // 3 types (var --> old way, let and const --> new way)
 
-const userpass = "123456"
+// const userpass = "123456"
 
 // userpass = "1232344"
 
-const obj = {
-    name: "surya",
-    age: 12
-}
+// const obj = {
+//     name: "surya",
+//     age: 12
+// }
 
-const arr = [1,2,3,4]
+// const arr = [1,2,3,4]
 
 
-let username = "skdjnfhun "
+// let username = "skdjnfhun "
 
-console.log(userpass)
-function test(){
-    if(true){
-        let username = "Sanjith"
-        username = "Surya"
-        console.log(username)
-    }
-    // console.log(username)
-}
+// console.log(userpass)
+// function test(){
+//     if(true){
+//         let username = "Sanjith"
+//         username = "Surya"
+//         console.log(username)
+//     }
+//     // console.log(username)
+// }
 
-test()
+// test()
 
 // console.log(username)
 
@@ -53,3 +52,28 @@ test()
    Global scope , 
 */
 
+
+// Temporal Dead Zone
+
+// let username
+
+
+// username="surya"
+
+
+// Call stack and FEC in js
+
+
+var num1 = 10
+var num2 = 20
+
+
+function square(ganesha){
+    console.log("Inside Function")
+    var result = ganesha * ganesha
+    return result
+}
+
+var ans1 = square(num1)
+var ans2 = square(num2)
+console.log(ans1, ans2)
