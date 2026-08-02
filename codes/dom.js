@@ -64,16 +64,104 @@
 // Call stack and FEC in js
 
 
-var num1 = 10
-var num2 = 20
+// var num1 = 10s
+// var num2 = 20
 
 
-function square(ganesha){
-    console.log("Inside Function")
-    var result = ganesha * ganesha
-    return result
+// function square(ganesha){
+//     console.log("Inside Function")
+//     var result = ganesha * ganesha
+//     return result
+// }
+
+// var ans1 = square(num1)
+// var ans2 = square(num2)
+// console.log(ans1, ans2)
+
+
+// scope vs closure difference
+
+
+// function test(){
+//     var count = 0
+//     return function(){
+//         count++
+//         console.log(count)
+//     }
+// }
+
+// var ans = test()
+// console.log(ans())
+// console.log(ans())
+// console.log(ans())
+// console.log(ans())
+
+
+// Javascript basics class
+
+
+// function declaration
+
+function test(cb, num){
+    //
+   var sqr = cb(num)
+   return sqr - num
 }
 
-var ans1 = square(num1)
-var ans2 = square(num2)
-console.log(ans1, ans2)
+// console.log(test())
+
+// function expression 
+
+var foo = function(n){
+      return n * n
+}
+
+// console.log(foo())
+
+// var fooRes = foo()
+// console.log(fooRes)
+
+// Arrow function
+
+var bar = (num, num1) => num*num1
+
+
+// console.log(bar(3, 4))
+// console.log(bar(4, 10))
+
+
+// Callback function
+
+// console.log(test(foo , 10))
+
+
+// Higher order function
+
+// Function which accepts a another function as an argument it is called HOF
+
+// Data types
+
+String
+Number
+Boolean
+null
+NaN
+undefined
+
+
+// name = "string"
+
+// age = 12
+
+
+const arr = [1,2,3]
+
+// const arr1 = new Array(5)
+
+let a = "10"
+
+// console.log(typeof Number(a))
+
+// console.log("10" == 10)
+// console.log("10"+"10")
+// console.log(10 + +"10")
