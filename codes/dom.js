@@ -102,19 +102,19 @@
 
 // function declaration
 
-function test(cb, num){
-    //
-   var sqr = cb(num)
-   return sqr - num
-}
+// function test(cb, num){
+//     //
+//    var sqr = cb(num)
+//    return sqr - num
+// }
 
 // console.log(test())
 
 // function expression 
 
-var foo = function(n){
-      return n * n
-}
+// var foo = function(n){
+//       return n * n
+// }
 
 // console.log(foo())
 
@@ -123,7 +123,7 @@ var foo = function(n){
 
 // Arrow function
 
-var bar = (num, num1) => num*num1
+// var bar = (num, num1) => num*num1
 
 
 // console.log(bar(3, 4))
@@ -141,12 +141,12 @@ var bar = (num, num1) => num*num1
 
 // Data types
 
-String
-Number
-Boolean
-null
-NaN
-undefined
+// String
+// Number
+// Boolean
+// null
+// NaN
+// undefined
 
 
 // name = "string"
@@ -154,14 +154,80 @@ undefined
 // age = 12
 
 
-const arr = [1,2,3]
+// const arr = [1,2,3]
 
 // const arr1 = new Array(5)
 
-let a = "10"
+// let a = "10"
 
 // console.log(typeof Number(a))
 
 // console.log("10" == 10)
 // console.log("10"+"10")
 // console.log(10 + +"10")
+
+
+// console.log(arr.length)
+
+// for (let i = 0; i < arr.length; i++) {
+   //    const element = arr[i];
+//    console.log("Elements " + element)
+// }
+
+// let i = 0; 
+// while(i<arr.length){
+//    const element = arr[i];
+//    console.log("Elements " + element)
+//    i++
+// }
+
+// do {
+//    const element = arr[i];
+//    console.log("Elements " + element)
+// } while (false);
+
+
+// for (const key in arr) {
+//    const element = arr[key]
+//    console.log(element + " element")
+// }
+
+// for (const element of arr) {
+//    console.log(element, " elements")
+// }
+
+// let bool = false
+// if(bool){
+//    console.log("Ganesha")
+// }else{
+//    console.log("Darun")
+// }
+
+
+// Array methods
+
+// let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
+// let arr1 = ["Partha", "Ganesha", "Manoj", "Deepak", "Darun" ,"JP"]
+
+// const pushedArr = arr.push("Ganesha")
+// console.log(pushedArr)
+// let poppedElem = arr.pop()
+// console.log(poppedElem)
+// console.log(arr)
+
+// function printEle(item){
+//    console.log()
+// }
+
+// arr.every()
+
+// console.log(arr + arr1)
+
+// console.log(arr.concat(arr1))
+// console.log(newArr)
+
+// arr.forEach()
+// arr.map()
+// arr.filter()
+// arr.reduce()
+
