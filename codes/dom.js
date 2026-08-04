@@ -206,7 +206,7 @@
 
 // Array methods
 
-// let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
+let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
 // let arr1 = ["Partha", "Ganesha", "Manoj", "Deepak", "Darun" ,"JP"]
 
 // const pushedArr = arr.push("Ganesha")
@@ -226,8 +226,45 @@
 // console.log(arr.concat(arr1))
 // console.log(newArr)
 
-// arr.forEach()
-// arr.map()
+
+
+// Very very important array methods
+// arr.forEach(). ->
+// arr.map()   ->
 // arr.filter()
 // arr.reduce()
 
+
+let numArr = [10,20,30,40,50,60]
+
+// function myFunction(prev , curr){
+//    return prev + curr
+// }
+
+// const returnedVal = numArr.forEach(myFunction)
+// console.log(returnedVal)
+
+// const mappedReturnedArr = numArr.map(myFunction)
+// console.log(mappedReturnedArr)
+
+// const returnedFilterArr = numArr.filter(myFunction)
+// console.log(returnedFilterArr)
+
+
+// const returnReducedVal = numArr.reduce(myFunction , 5)
+// console.log(returnReducedVal)
+
+
+// Methods chaining
+const returnedVal = numArr.map( item=> item*2).filter(item => item > 60).reduce((prev, curr)=> prev + curr).toFixed(3)
+console.log(returnedVal)
+
+
+// let obj = {
+//    name: "surya",
+//    getInfo: function(){
+//       console.log("Name", this.name )
+//    }
+// }
+
+// obj.getInfo()
