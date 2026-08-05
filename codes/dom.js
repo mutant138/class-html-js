@@ -206,7 +206,7 @@
 
 // Array methods
 
-let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
+// let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
 // let arr1 = ["Partha", "Ganesha", "Manoj", "Deepak", "Darun" ,"JP"]
 
 // const pushedArr = arr.push("Ganesha")
@@ -235,7 +235,6 @@ let arr = ["Surya", "Nazith", "Sanjith","Prem","Sabari"]
 // arr.reduce()
 
 
-let numArr = [10,20,30,40,50,60]
 
 // function myFunction(prev , curr){
 //    return prev + curr
@@ -256,8 +255,8 @@ let numArr = [10,20,30,40,50,60]
 
 
 // Methods chaining
-const returnedVal = numArr.map( item=> item*2).filter(item => item > 60).reduce((prev, curr)=> prev + curr).toFixed(3)
-console.log(returnedVal)
+// const returnedVal = numArr.map( item=> item*2).filter(item => item > 60).reduce((prev, curr)=> prev + curr).toFixed(3)
+// console.log(returnedVal)
 
 
 // let obj = {
@@ -268,3 +267,61 @@ console.log(returnedVal)
 // }
 
 // obj.getInfo()
+
+
+// let numArr = [100,40,5,60,20,30]
+
+// let antherArrr = ["Surya", "Deepak" , "Ganesha", "Jeyavishnu", "Sabari"]
+
+
+// const logs = numArr.every((num)=> num > 10)
+// const logs = numArr.some((num)=> num > 70)
+// const logs = numArr.reverse()
+// const logs = numArr.slice(-2)
+// const logs = numArr.splice(2, 1, "Ganesha", "Nazith", "surya")
+
+// const logs = numArr.sort((a,b)=> b-a)
+
+// const logs = numArr.indexOf(1000)
+
+// console.log(numArr)
+// console.log(logs)
+
+
+
+
+// IIFE (Immediately Invoked Function Expression)
+
+
+// (function(){
+//   console.log("It is IIFE")
+// })();
+
+// (()=> {
+//   console.log("This runs immediately!");
+// })();
+
+
+let obj = {
+   username: "surya",
+   age: 25,
+   greet :function (params) {
+      console.log("Hello")
+   }
+}
+
+
+let stud = [
+   {studentName : "Surya", marks: 50},
+   {studentName : "Nazith", marks: 100},
+   {studentName : "Manoj", marks: 40},
+   {studentName : "Jeya", marks: 60},
+   {studentName : "Deepak", marks: 30},
+]
+
+
+let res= stud.reduce((acc,curr)=> acc + curr.marks , 0)
+
+console.log(res)
+
+
