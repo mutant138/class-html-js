@@ -302,26 +302,120 @@
 // })();
 
 
-let obj = {
-   username: "surya",
-   age: 25,
-   greet :function (params) {
-      console.log("Hello")
-   }
-}
+// let obj = {
+//    username: "surya",
+//    age: 25,
+//    greet :function (params) {
+//       console.log("Hello")
+//    }
+// }
 
 
-let stud = [
-   {studentName : "Surya", marks: 50},
-   {studentName : "Nazith", marks: 100},
-   {studentName : "Manoj", marks: 40},
-   {studentName : "Jeya", marks: 60},
-   {studentName : "Deepak", marks: 30},
-]
+// let stud = [
+//    {studentName : "Surya", marks: 50},
+//    {studentName : "Nazith", marks: 100},
+//    {studentName : "Manoj", marks: 40},
+//    {studentName : "Jeya", marks: 60},
+//    {studentName : "Deepak", marks: 30},
+// ]
 
 
-let res= stud.reduce((acc,curr)=> acc + curr.marks , 0)
+// let res= stud.reduce((acc,curr)=> acc + curr.marks , 0)
 
-console.log(res)
+// console.log(res)
+
+// let name = "Nazith"
+
+// let stud = {
+//    name: "surya",
+//    getInfo: function(){
+//       return `Hello ! this is ${this.name}`
+//    },
+//    getData : ()=>{
+//       return `Hello ! this is ${this.name}`
+//    },
+//    age: 25
+// }
 
 
+// console.log(stud.getData())
+
+// const res = Object.values(stud)
+// const res = Object.keys(stud)
+// Object.freeze()
+// let res = Object.bin(stud)
+
+// console.log(res)
+
+// function test(){
+//    console.log("Time delay function")
+// }
+
+// setTimeout(test, 5000)
+
+// console.log("Hi Non delay Function")
+
+// setTimeout(()=>{
+//    console.log("Timer 0 function")
+// },0)
+
+
+// JSON 
+
+// const data = [
+//   {
+//     "userId": 1,
+//     "id": 1,
+//     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 2,
+//     "title": "qui est esse",
+//     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 3,
+//     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+//     "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+//   },
+//   {
+//     "userId": 1,
+//     "id": 4,
+//     "title": "eum et est occaecati",
+//     "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+//   },
+// ]
+
+// console.log(data)
+
+const lists = document.getElementById("lists")
+
+const response = fetch("https://jsonplaceholder.typicode.com/pos")
+.then((res)=>{
+//   console.log(res, "<<<<<<< inside then")
+  const data =  res.json()
+  return data
+})
+.then((data)=>{
+    data.map((item)=>{
+  const li = document.createElement("li")
+  li.textContent = item.title
+  lists.appendChild(li)
+})
+})
+.catch((err)=>{
+   console.log(err, "error")
+})
+
+// console.log(response)
+
+// const res = data.map((item)=>{
+//   const li = document.createElement("li")
+//   li.textContent = item.title
+//   lists.appendChild(li)
+// })
+
+// Promise 
