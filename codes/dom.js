@@ -391,24 +391,24 @@
 
 // console.log(data)
 
-const lists = document.getElementById("lists")
+// const lists = document.getElementById("lists")
 
-const response = fetch("https://jsonplaceholder.typicode.com/pos")
-.then((res)=>{
-//   console.log(res, "<<<<<<< inside then")
-  const data =  res.json()
-  return data
-})
-.then((data)=>{
-    data.map((item)=>{
-  const li = document.createElement("li")
-  li.textContent = item.title
-  lists.appendChild(li)
-})
-})
-.catch((err)=>{
-   console.log(err, "error")
-})
+// const response = fetch("https://jsonplaceholder.typicode.com/pos")
+// .then((res)=>{
+// //   console.log(res, "<<<<<<< inside then")
+//   const data =  res.json()
+//   return data
+// })
+// .then((data)=>{
+//     data.map((item)=>{
+//   const li = document.createElement("li")
+//   li.textContent = item.title
+//   lists.appendChild(li)
+// })
+// })
+// .catch((err)=>{
+//    console.log(err, "error")
+// })
 
 // console.log(response)
 
@@ -418,4 +418,85 @@ const response = fetch("https://jsonplaceholder.typicode.com/pos")
 //   lists.appendChild(li)
 // })
 
-// Promise 
+// Promise
+
+// new Array(5)
+
+// class Human{
+//    constructor(gender = "Boy"){
+//       this.gender = gender
+//    }
+//    greet(){
+//       console.log(`Hi I am a ${this.gender}`)
+//    }
+// }
+// class Student extends Human{
+//     constructor(name = "Guest" , age = 18, gender){
+//       super(gender)
+//       this.studentName = name
+//       this.studentAge = age
+//     }
+
+//    getInfo(place = "MDU"){
+//      console.log(`Hi I am ${this.studentName} and I am ${this.studentAge} years old
+//       I am from ${place}`)
+//    }
+// }
+
+
+
+// const student1 = new Student("Nazith", 20, "Boy")
+// const student2 = new Student("Darani", 21, "Girl")
+// const student3 = new Student()
+
+// console.log(student2.gender)
+// student1.greet()
+
+// console.log(student1.studentName)
+
+// console.log(student3.studentName)
+
+
+// student1.getInfo("Madurai")
+
+// student2.getInfo()
+
+
+class MyArray{
+   constructor(){
+      this.length= 0
+      this.data = []
+   }
+
+   myPush(item){
+      this.data[this.length] = item
+      this.length++
+      return this.length
+   }
+   myPop(){
+      let lastItem = this.data[this.length-1] 
+      delete this.data[this.length-1]
+      this.length--
+      return lastItem
+   }
+}
+
+
+const myArr = new MyArray()
+const antherArr = new MyArray()
+
+console.log(myArr.myPush(10))
+console.log(myArr.myPush(20))
+console.log(myArr.myPush(30))
+
+console.log(myArr.myPop())
+console.log(myArr.myPop())
+
+console.log(myArr.myPop())
+
+
+console.log(myArr.length)
+// console.log(antherArr.length)
+
+
+console.log(myArr.data)
