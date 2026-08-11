@@ -462,41 +462,104 @@
 // student2.getInfo()
 
 
-class MyArray{
-   constructor(){
-      this.length= 0
-      this.data = []
-   }
+// class MyArray{
+//    constructor(){
+//       this.length= 0
+//       this.data = []
+//    }
 
-   myPush(item){
-      this.data[this.length] = item
-      this.length++
-      return this.length
-   }
-   myPop(){
-      let lastItem = this.data[this.length-1] 
-      delete this.data[this.length-1]
-      this.length--
-      return lastItem
-   }
+//    myPush(item){
+//       this.data[this.length] = item
+//       this.length++
+//       return this.length
+//    }
+//    myPop(){
+//       let lastItem = this.data[this.length-1] 
+//       delete this.data[this.length-1]
+//       this.length--
+//       return lastItem
+//    }
+// }
+
+
+// const myArr = new MyArray()
+// const antherArr = new MyArray()
+
+// console.log(myArr.myPush(10))
+// console.log(myArr.myPush(20))
+// console.log(myArr.myPush(30))
+
+// console.log(myArr.myPop())
+// console.log(myArr.myPop())
+
+// console.log(myArr.myPop())
+
+
+// console.log(myArr.length)
+// // console.log(antherArr.length)
+
+
+// console.log(myArr.data)
+
+
+// const p = new Promise(res, rej)
+
+// console.log(p)
+
+
+const getFullDetails = function (hometown){
+   console.log(`I am ${this.firstName} ${this.lastName} from ${hometown}`)
+}
+let obj = {
+   firstName: "Udhaya",
+   lastName: "Surya",
 }
 
+// getFullDetails.call(obj,"Madurai")
 
-const myArr = new MyArray()
-const antherArr = new MyArray()
+let obj1 = {
+   firstName: "Jeya",
+   lastName: "Prekash",
+}
 
-console.log(myArr.myPush(10))
-console.log(myArr.myPush(20))
-console.log(myArr.myPush(30))
+// Obj DEsctructuring
+// let userFirstName = obj.firstName
+// let userLastName = obj.lastName
 
-console.log(myArr.myPop())
-console.log(myArr.myPop())
+// let {firstName , lastName } = obj
 
-console.log(myArr.myPop())
+// console.log(firstName)
+// console.log(lastName)
+
+// Array Destrcuturing
+
+// const arr = ["Ganesha", "Sabari", "Prem"]
+
+// let [ , b ,c] = arr
+// console.log(b)
+
+// const arr = ["Ganesha", "Sabari", "Prem"]
+// const arr1 = ["Surya", "Sanjith", "Manoj"]
+
+// const combinedArr = [...arr,...arr1]
+
+// console.log(combinedArr)
+// Function Burrowing
+
+// getFullDetails.call(obj1, "Chennai")
+
+// const homeTown = ["Delhi"]
+
+// getFullDetails.apply(obj, homeTown)
+
+// const fullNameFunc = getFullDetails.bind(obj1)
+
+// fullNameFunc("Mumbai")
 
 
-console.log(myArr.length)
-// console.log(antherArr.length)
+// function add(x,y,z , ...ganesha){
+//    console.log(x,y,z)
+//    console.log(ganesha)
+// }
 
-
-console.log(myArr.data)
+// add(1,2,3,4,5,6,7,8,9)
