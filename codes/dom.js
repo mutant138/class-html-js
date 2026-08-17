@@ -575,3 +575,11 @@ let obj1 = {
 //git clone <url> --> it will download the git remote project in your local at the current folder
 
 // git status --->> shows modified, staged and untracked 
+
+//git add ->>> it will move the modified , Untracked , deleted files to the staged changes
+
+//git commit -m "your-commit-mesg"  --> Records or Saves your staged code snapshot permanently in local repo 
+
+// git log --oneline --graph --all ---> See history of commits 
+
+
