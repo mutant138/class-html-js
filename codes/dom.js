@@ -563,3 +563,15 @@ let obj1 = {
 // }
 
 // add(1,2,3,4,5,6,7,8,9)
+
+
+// Git 
+
+//git config user.name "remote-username"
+//git config user.email "remote-emaild"
+
+//git init ->> initialize the git local repo at the current folder
+
+//git clone <url> --> it will download the git remote project in your local at the current folder
+
+// git status --->> shows modified, staged and untracked 
