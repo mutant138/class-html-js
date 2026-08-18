@@ -582,4 +582,10 @@ let obj1 = {
 
 // git log --oneline --graph --all ---> See history of commits 
 
+// git branch ---> list all the local branches
 
+// git branch <name> --> it will creat new branch
+
+// git switch <branch-name> ---> It will switch to the entered branch
+
+// git switch -c <branch-name> --> It will create new branch and switch it to the created branch automatically
