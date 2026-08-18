@@ -589,3 +589,7 @@ let obj1 = {
 // git switch <branch-name> ---> It will switch to the entered branch
 
 // git switch -c <branch-name> --> It will create new branch and switch it to the created branch automatically
+
+// git remote add <url> ---> 
+
+
