@@ -4,9 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense</title>
-    <style>
-        .list{
-            color: red;
+     <style>
+        * {
+            box-sizing: border-box;
+        }
+   
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: green;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #555;
+            color: white;
+        }
+
+        #expenseList {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 0;
+        }
+
+        /* Dynamic class */
+        .list {
+            background-color: white;
+            color: #333;
+            list-style: none;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .list strong {
+            color: #222;
+        }
+
+        .category {
+            color: #777;
+            font-size: 14px;
+        }
+        .dltBtn{
+            background-color: red;
+            color: white;
+            margin-left: 20px ;
+        }
+        .edtBtn{
+            background-color: blue;
+            color: white;
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -14,7 +103,7 @@
     <h1>Expense Tracker</h1>
     <form id="myForm">
         <label>Expense Name : </label>
-        <input type="text" id="expenseName" name="expenses"><br><br>
+        <input type="text" id="expenseName" name="expenses" ><br><br>
          <label>Expense Description : </label>
         <input type="text" id="description" name="description" ><br><br>
         <label>Expense Amount : </label>
@@ -35,6 +124,7 @@
             Reset
         </button>
     </form>
+    <h1>Expense Lists</h1>
     <ul id="expenseList"></ul>
     <script src="./app.js"></script>
 </body>
