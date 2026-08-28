@@ -3,36 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense</title>
-     <style>
+    <title>Expense Tracker</title>
+    <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-   
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
-            padding: 40px;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e293b;
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        nav button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+
+        nav button:hover {
+            background-color: #2563eb;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 30px auto;
+            padding: 0 15px;
         }
 
         h1 {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         form {
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 25px;
             background-color: white;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
         }
 
         label {
-            display: inline-block;
+            display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            font-size: 14px;
         }
 
         input,
@@ -42,6 +82,12 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
         }
 
         button {
@@ -49,83 +95,142 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-right: 10px;
+            font-weight: bold;
         }
 
         button[type="submit"] {
-            background-color: green;
+            background-color: #16a34a;
             color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #15803d;
         }
 
         button[type="reset"] {
-            background-color: #555;
+            background-color: #64748b;
             color: white;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #475569;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        #totalExpense {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .filter-section {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
         }
 
         #expenseList {
-            max-width: 500px;
-            margin: 20px auto;
             padding: 0;
+            list-style: none;
         }
 
-        /* Dynamic class */
         .list {
             background-color: white;
             color: #333;
-            list-style: none;
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .list strong {
-            color: #222;
+        .dltBtn {
+            background-color: #ef4444;
+            color: white;
+            margin-left: 8px;
         }
 
-        .category {
-            color: #777;
-            font-size: 14px;
+        .dltBtn:hover {
+            background-color: #dc2626;
         }
-        .dltBtn{
-            background-color: red;
+
+        .edtBtn {
+            background-color: #3b82f6;
             color: white;
-            margin-left: 20px ;
+            margin-left: 8px;
         }
-        .edtBtn{
-            background-color: blue;
-            color: white;
-            margin-left: 20px;
+
+        .edtBtn:hover {
+            background-color: #2563eb;
         }
     </style>
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-    <form id="myForm">
-        <label>Expense Name : </label>
-        <input type="text" id="expenseName" name="expenses" ><br><br>
-         <label>Expense Description : </label>
-        <input type="text" id="description" name="description" ><br><br>
-        <label>Expense Amount : </label>
-        <input type="number" min="0" id="amount" name="amount"><br><br>
-         <label>Expense Date : </label>
-        <input type="date" id="date" name="date"><br><br>
-        <label>Expense Categories :</label>
-        <select id="categories" name="categories">
-            <option value="fuel">Fuel</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="food">Food</option>
-            <option value="home">Home</option>
-        </select><br><br>
-        <button type="submit">
-            Submit
-        </button>
-        <button type="reset">
-            Reset
-        </button>
-    </form>
-    <h1>Expense Lists</h1>
-    <ul id="expenseList"></ul>
+    <nav>
+        <div class="logo">Expense Tracker</div>
+        <button id="loginBtn">Login</button>
+    </nav>
+
+    <div class="container">
+        <h1>Add Expense</h1>
+       
+        <form id="myForm">
+            <label for="expenseName">Expense Name :</label>
+            <input type="text" id="expenseName" name="expenses" required>
+
+            <label for="description">Expense Description :</label>
+            <input type="text" id="description" name="description">
+
+            <label for="amount">Expense Amount :</label>
+            <input type="number" min="0" id="amount" name="amount" required>
+
+            <label for="date">Expense Date :</label>
+            <input type="date" id="date" name="date">
+
+            <label for="categories">Expense Category :</label>
+            <select id="categories" name="categories">
+                <option value="fuel">Fuel</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food</option>
+                <option value="home">Home</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <hr>
+
+        <h2 id="totalExpense">Total Spent : ₹0</h2>
+
+        <div class="filter-section">
+            <label for="searchInput">Search :</label>
+            <input type="text" id="searchInput" placeholder="Search expenses...">
+
+            <label for="filterCategory">Filter by Category :</label>
+            <select id="filterCategory" name="filterCategory">
+                <option value="all">All</option>
+                <option value="fuel">Fuel</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food</option>
+                <option value="home">Home</option>
+            </select>
+        </div>
+
+        <ul id="expenseList"></ul>
+    </div>
+
     <script src="./app.js"></script>
 </body>
 </html>
