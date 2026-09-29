@@ -2,6 +2,10 @@ const express = require("express")
 const cors = require("cors")
 const {getDb , connectDB} =require("./utils/dbConnection")
 const { ObjectId } = require("mongodb")
+const dotenv = require("dotenv")
+
+dotenv.config()
+
 
 // MVC Architecture
 
@@ -118,14 +122,12 @@ app.patch("/update-user", async(req,res)=>{
    }
 })
 // Port numbers 
-
+const PORT = process.env.PORT
 async function startServer(){
    await connectDB();
-   app.listen(3000, () => {
-    console.log("Server is running")
+   app.listen(PORT, () => {
+    console.log("Server is running " + PORT)
   })
 }
 
 startServer()
-
-

@@ -1,8 +1,11 @@
 const { MongoClient } = require("mongodb")
+const dotenv = require("dotenv")
+
+dotenv.config()
 
 // Local db use or cloud db
 
-const url = 'mongodb://localhost:27017';
+const url = process.env.MONGO_URI;
 
 const dbName = 'ganeshaProject';
 

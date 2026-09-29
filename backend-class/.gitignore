@@ -1,0 +1,4 @@
+.env.local
+.env.demo
+.env.prod
+node_modules

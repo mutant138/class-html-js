@@ -7,12 +7,14 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "NODE_ENV=local nodemon server.js",
+    "demo": "NODE_ENV=demo node server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
     "express": "^5.2.1",
     "mongodb": "^7.6.0"
   },
