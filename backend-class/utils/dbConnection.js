@@ -1,27 +1,44 @@
-const { MongoClient } = require("mongodb")
+// const { MongoClient } = require("mongodb")
 const dotenv = require("dotenv")
 
 dotenv.config()
 
-// Local db use or cloud db
+// // Local db use or cloud db
 
-const url = process.env.MONGO_URI;
+const uri = process.env.MONGO_URI;
+console.log("uri", uri)
 
-const dbName = 'ganeshaProject';
+// const dbName = 'ganeshaProject';
 
-const client = new MongoClient(url)
+// const client = new MongoClient(url)
 
-let db
+// let db
 
-async function connectDB(){
-    await client.connect();
-    db = client.db(dbName)
-    console.log("Database connected successfully")
+// async function connectDB(){
+//     await client.connect();
+//     db = client.db(dbName)
+//     console.log("Database connected successfully")
+// }
+
+// function getDb(){
+//     if(!db) throw new Error('Database not connected')
+//     return db
+// }
+
+// module.exports = {connectDB , getDb}
+
+
+const mongoose = require('mongoose');
+
+
+async function connectDB() {
+    try {
+        await mongoose.connect(uri)
+        // console.log(db, "This is db connection log")
+        console.log("Database successfully connected")
+    } catch (error) {
+        console.error("Err in db connection ", error)
+    }
 }
 
-function getDb(){
-    if(!db) throw new Error('Database not connected')
-    return db
-}
-
-module.exports = {connectDB , getDb}
+module.exports = {connectDB}
