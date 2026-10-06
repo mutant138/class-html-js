@@ -20,7 +20,28 @@ const getRegisterPage = async(req,res)=>{
     }
 }
 
+const postLogin = async(req,res)=>{
+
+}
+
+const postRegister = async(req,res)=>{
+    try {
+        const userObj = req.body
+        if(!userObj.userName ||!userObj.userMail || !userObj.userPass){
+           return res.status(404).json({message : "Fill out all required fields", okay: false})
+        }
+        console.log("userrrobjj", userObj)
+
+        
+        
+    } catch (error) {
+        console.error("Err in postRegister", error)
+    }
+}
+
 module.exports = {
     getLoginPage,
-    getRegisterPage
+    getRegisterPage,
+    postLogin,
+    postRegister
 }
