@@ -1,5 +1,5 @@
-
-
+const express = require("express")
+const User = require("../models/users")
 
 
 
@@ -27,17 +27,18 @@ const postLogin = async(req,res)=>{
 const postRegister = async(req,res)=>{
     try {
         const userObj = req.body
-        if(!userObj.userName ||!userObj.userMail || !userObj.userPass){
-           return res.status(404).json({message : "Fill out all required fields", okay: false})
-        }
         console.log("userrrobjj", userObj)
 
-        
-        
+        User.create(userObj)
+        return res.status(201).json({message : "Successfully registered", okay : true})
+
     } catch (error) {
         console.error("Err in postRegister", error)
     }
 }
+
+// IP(123.123.123.23) -> hongkong(VPN) (213.234.24.432) ->  yts  -> ip
+
 
 module.exports = {
     getLoginPage,
