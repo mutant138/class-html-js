@@ -18,7 +18,7 @@ const registerValidation = (req,res, next)=>{
     next()
 }
 
-const loginValidation = (req,res)=>{
+const loginValidation = (req,res,next)=>{
     try {
         const userObj = req.body
         console.log("middllllllware",userObj)

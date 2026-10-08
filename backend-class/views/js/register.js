@@ -1,13 +1,12 @@
 
 
-
 const registerForm = document.getElementById("registerForm")
 
 registerForm.addEventListener("submit",submitDetails)
 
 async function submitDetails(event){
     try {
-        console.log("cliecked")
+        console.log("clicked")
         event.preventDefault()
         const userName = event.target.userName.value
         const userMail = event.target.userEmail.value
