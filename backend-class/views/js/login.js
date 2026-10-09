@@ -29,6 +29,7 @@ async function submitDetails(event){
         }
         if(data.okay){
  alert(data.message)
+ localStorage.setItem("isAuth", true)
  location.replace("http://localhost:3000/home")
         }
 

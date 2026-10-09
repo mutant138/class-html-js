@@ -29,9 +29,16 @@ async function submitDetails(event){
         if(!data.okay){
             throw new Error(data.message)
         }
+        localStorage.setItem("isAuth", true)
         
     } catch (error) {
         console.log("error", error)
         alert(error)
     }
+}
+
+
+function logout(){
+    localStorage.clear()
+    location.href="/login"
 }

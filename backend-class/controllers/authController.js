@@ -55,9 +55,9 @@ const postRegister = async(req,res)=>{
 
 const postLogin = async(req,res)=>{
     try {
-        const {userEmail , userPass} = req.body
+        const {userMail , userPass} = req.body
         
-       const foundUser = await User.findOne({userEmail : userEmail})
+       const foundUser = await User.findOne({userMail : userMail})
        console.log(foundUser, "foundUser")
       
        if(!foundUser){
@@ -67,9 +67,14 @@ const postLogin = async(req,res)=>{
        let isMatch = false
        console.log(foundUser.userName,">>>>>>>.userName")
 
-       if(foundUser.userPass === userPass){
+       const comp = await bcrypt.compare(userPass, foundUser.userPass)
+    
+       if(comp){
         isMatch = true
        }
+
+       console.log(isMatch ,"isMatchhhhhh")
+
        if(!isMatch){
         return res.status(404).json({message : "Invalid credentials", okay: false})
        }
