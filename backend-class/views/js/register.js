@@ -30,7 +30,7 @@ async function submitDetails(event){
             throw new Error(data.message)
         }
         localStorage.setItem("isAuth", true)
-        
+        location.href = "/home/expense"
     } catch (error) {
         console.log("error", error)
         alert(error)

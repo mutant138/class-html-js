@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 
 // Importing Routes
 const authRoutes = require("./routes/authRoutes")
+const homeRoutes = require("./routes/homeRoute")
 
 dotenv.config()
 
@@ -23,6 +24,7 @@ app.use(express.static('views'));
 
 // Using Routes
 app.use("/auth",authRoutes)
+app.use("/home", homeRoutes)
 
 
 app.get("/health", (req, res) => {
