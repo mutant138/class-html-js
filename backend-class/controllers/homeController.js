@@ -41,8 +41,23 @@ const getAllExpenses = async(req,res)=>{
 }
 
 
+const deleteExpense =async (req,res) => {
+    try {
+        const {id} = req.params
+        const deltedExpense = await Expense.deleteOne({_id : id})
+        console.log("deletedExpense", deltedExpense)
+        if(!deleteExpense){
+            return res.status(400).json({okay : false, message : "Something went wrong"})
+        }
+        return res.status(200).json({okay: true , message :"Successfully deleted"})
+    } catch (error) {
+         console.error("Err in delete expense", error)
+    }
+}
+
 module.exports = {
     getHomePage,
     createExpense,
-    getAllExpenses
+    getAllExpenses,
+    deleteExpense
 }

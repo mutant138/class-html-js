@@ -2,6 +2,8 @@ let isAuth = localStorage.getItem("isAuth")
 const login_btn = document.getElementById("loginBtn")
 const expenseForm = document.getElementById("myForm")
 const expenseList = document.getElementById("expenseList")
+
+const editId = null
 document.addEventListener("DOMContentLoaded",()=>{
     const isAuth = localStorage.getItem("isAuth")
     if(!isAuth){
@@ -31,6 +33,14 @@ expenseForm.addEventListener("submit",async (event)=>{
         category: event.target.categories.value
     }
     console.log("expenseDetails",expenseDetails)
+
+    if(editId){
+         const res = await fetch(`http://www.localhost:3000/home/expense/${id}`,{
+                method :"PATCH",
+                body : expenseDetails
+         })
+
+    }
     const res = await fetch("http://localhost:3000/home/expense",{
         method: "POST",
          headers:{
@@ -44,7 +54,7 @@ expenseForm.addEventListener("submit",async (event)=>{
         if(!data.okay){
             throw new Error(data.message)
         }
-
+        getAllExpensesHandler()
     }
     } catch (error) {
         console.log("Error in expense form submit", error)
@@ -64,15 +74,58 @@ async function getAllExpensesHandler(){
               expenses.forEach((item, index) => {
     let li = document.createElement("li")
     li.innerHTML = `<span>${item.expense} - ${item.amount} (${item.category})<span>
-    <button class="edtBtn" data-index="${index}"> Edit </button>
-    <button class="dltBtn" data-index="${index}"> Delete </button>
+    <button class="edtBtn" data-index="${item._id}"> Edit </button>
+    <button class="dltBtn" data-index="${item._id}"> Delete </button>
     `
     expenseList.appendChild(li)
     });
         }
-            // console.log(listToRender)
   
     } catch (error) {
         console.error("errorin getting expenses", error)
     }
 }
+
+
+expenseList.addEventListener("click",async(event)=>{
+    // console.log(event, "clickkkkkkk")
+    try {
+          const target = event.target
+    const id = target.dataset.index
+    console.log("indexx", id)
+    console.dir(target, "target")
+    if(target.classList.contains("dltBtn")){
+        let dlt = confirm("Are you sure to delete ?")
+        // console.log(dlt,"dltdltdltdlt")
+        // if(dlt){
+        //  expenseArr.splice(index, 1)
+        // localStorage.setItem("expenses", JSON.stringify(expenseArr))
+        // filtersAndRender()
+        // }
+        // return
+        if(dlt){
+            const res = await fetch(`http://www.localhost:3000/home/expense/${id}`,{
+                method :"DELETE",
+            })
+            if(res.ok){
+                const respData = await res.json()
+                if(!respData.okay){
+                    throw new Error(respData.message)
+                }
+                alert(respData.message)
+                getAllExpensesHandler()
+            }
+        }
+
+    }else if(target.classList.contains("edtBtn")){
+        // const item = expenseArr[id]
+
+        
+        
+    }
+    } catch (error) {
+        console.log("Error"), error
+    }
+  
+
+})
