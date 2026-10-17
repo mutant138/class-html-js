@@ -55,9 +55,45 @@ const deleteExpense =async (req,res) => {
     }
 }
 
+const getExpense = async(req,res)=>{
+       const {id} = req.params
+       const expense = await Expense.findById({_id : id})
+    //    console.log("expense >>>", expense)
+       if(!expense){
+        return res.status(404).json({ okay : false , message : "Expense not found"})
+       }
+       return res.status(200).json({ okay : true , message : "Expense found", data : expense})
+}
+
+
+const updateExpense = async(req,res)=>{
+      const {id} = req.params
+      const expense = await Expense.findById({_id : id})
+      console.log("expense in update >>>", expense)
+      console.log("expense body", req.body)
+       if(!expense){
+        return res.status(404).json({ okay : false , message : "Expense not found"})
+       }
+       const updatedExpense =  await Expense.updateOne({
+        _id: id
+       },
+      {
+       $set : {
+         ...req.body
+       } 
+      })
+      if(!updatedExpense){
+     return res.status(404).json({ okay : false , message : "something went wrong"})
+      }
+      return res.status(200).json({okay : true , message : "Successfully updated"})
+}
+
+
 module.exports = {
     getHomePage,
     createExpense,
     getAllExpenses,
-    deleteExpense
+    deleteExpense,
+    getExpense,
+    updateExpense
 }

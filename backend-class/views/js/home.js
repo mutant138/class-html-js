@@ -3,7 +3,7 @@ const login_btn = document.getElementById("loginBtn")
 const expenseForm = document.getElementById("myForm")
 const expenseList = document.getElementById("expenseList")
 
-const editId = null
+let editId = null
 document.addEventListener("DOMContentLoaded",()=>{
     const isAuth = localStorage.getItem("isAuth")
     if(!isAuth){
@@ -33,13 +33,21 @@ expenseForm.addEventListener("submit",async (event)=>{
         category: event.target.categories.value
     }
     console.log("expenseDetails",expenseDetails)
+    console.log("editId" , editId)
 
     if(editId){
-         const res = await fetch(`http://www.localhost:3000/home/expense/${id}`,{
+         const res = await fetch(`http://www.localhost:3000/home/expense/${editId}`,{
                 method :"PATCH",
-                body : expenseDetails
+                  headers:{
+                 'Content-Type': 'application/json'
+                },
+                body : JSON.stringify(expenseDetails)
          })
-
+         if(!res.ok){}
+         const respData = res.json()
+         if(!respData.okay){}
+         getAllExpensesHandler()
+        return
     }
     const res = await fetch("http://localhost:3000/home/expense",{
         method: "POST",
@@ -55,6 +63,7 @@ expenseForm.addEventListener("submit",async (event)=>{
             throw new Error(data.message)
         }
         getAllExpensesHandler()
+        window.location.reload()
     }
     } catch (error) {
         console.log("Error in expense form submit", error)
@@ -96,13 +105,6 @@ expenseList.addEventListener("click",async(event)=>{
     console.dir(target, "target")
     if(target.classList.contains("dltBtn")){
         let dlt = confirm("Are you sure to delete ?")
-        // console.log(dlt,"dltdltdltdlt")
-        // if(dlt){
-        //  expenseArr.splice(index, 1)
-        // localStorage.setItem("expenses", JSON.stringify(expenseArr))
-        // filtersAndRender()
-        // }
-        // return
         if(dlt){
             const res = await fetch(`http://www.localhost:3000/home/expense/${id}`,{
                 method :"DELETE",
@@ -119,9 +121,20 @@ expenseList.addEventListener("click",async(event)=>{
 
     }else if(target.classList.contains("edtBtn")){
         // const item = expenseArr[id]
-
-        
-        
+        editId = id
+         const res = await fetch(`http://www.localhost:3000/home/get-expense/${id}`)
+         if(res.ok){
+            const respData = await res.json()
+            if(!respData.okay){
+               throw new Error(respData.message)
+            }
+            const expenseData = respData.data
+            expenseForm.expenses.value = expenseData.expense
+            expenseForm.description.value = expenseData.description
+            expenseForm.amount.value = expenseData.amount
+            expenseForm.date.value = new Date(expenseData.date)
+            expenseForm.categories.value = expenseData.category
+        }
     }
     } catch (error) {
         console.log("Error"), error
