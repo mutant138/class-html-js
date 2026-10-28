@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const {connectDB} = require("./utils/dbConnection")
 const dotenv = require("dotenv")
+const http = require("http")
 
 // Importing Routes
 const authRoutes = require("./routes/authRoutes")
@@ -30,9 +31,6 @@ app.use("/home", homeRoutes)
 app.get("/health", (req, res) => {
     return res.status(200).json({message : "Server working"})
 })
-
-
-
 
 
 
